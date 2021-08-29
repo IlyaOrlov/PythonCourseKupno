@@ -1,7 +1,8 @@
 # Спроектировать классы (один или несколько) для игры в танки и создать объекты этих классов.
+
 class Tank:
     def print_info(self):
-        print(f'Модель танка: {self.name}, максимальная скорость: {self.speed}, запас хода: {self.power_reserve}')
+        print(f'Модель танка: {self.name}, максимальная скорость: {self.speed} км/ч, запас хода: {self.power_reserve} км.')
 
 
 t34 = Tank()

@@ -27,6 +27,6 @@ while True:
         print('Твое число больше загаданного мной.')
 
     else:
-        int(x) == number:
+        int(x) == number
         print(f'Ух ты! Ты угадал мое число, использовав {number_attempts} попыток!')
         break

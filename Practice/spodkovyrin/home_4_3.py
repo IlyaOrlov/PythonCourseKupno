@@ -5,12 +5,16 @@ number_attempts = 0
 a = int(input('Введите нижнюю границу диапазона: '))
 b = int(input('Введите верхнюю границу диапазона: '))
 number = random.randint(a, b)
-print('Отлично, я загадал число между {} и {}. Сможешь угадать?'.format(a, b))
+print(f'Отлично, я загадал число между {a} и {b}. Сможешь угадать?')
 x = 0
 
 while True:
     x = input('Введи число: ')
     number_attempts += 1
+
+    if (int(x) < a) or (int(x) > b):
+        print('Вы вышли за значения диапазона!')
+        break
 
     if not x.isnumeric():
         print('Извините, но вы ввели не число!')
@@ -23,5 +27,5 @@ while True:
         print('Твое число больше загаданного мной.')
 
     if int(x) == number:
-        print('Ух ты! Ты угадал мое число, использовав {} попыток!'.format(number_attempts))
+        print(f'Ух ты! Ты угадал мое число, использовав {number_attempts} попыток!')
         break

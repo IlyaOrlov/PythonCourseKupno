@@ -16,17 +16,19 @@ while True:
         print('Извините, но вы ввели не число!')
         break
 
-    elif (int(x) < a) or (int(x) > b):
+    x = int(x)
+
+    if (x < a) or (x > b):
         print('Вы вышли за значения диапазона!')
         break
 
-    elif int(x) < number:
+    elif x < number:
         print('Твое число меньше того, что я загадал.')
 
-    elif int(x) > number:
+    elif x > number:
         print('Твое число больше загаданного мной.')
 
     else:
-        int(x) == number
+        x == number
         print(f'Ух ты! Ты угадал мое число, использовав {number_attempts} попыток!')
         break

@@ -12,12 +12,12 @@ while True:
     x = input('Введи число: ')
     number_attempts += 1
 
-    if (int(x) < a) or (int(x) > b):
-        print('Вы вышли за значения диапазона!')
-        break
-
     if not x.isnumeric():
         print('Извините, но вы ввели не число!')
+        break
+
+    if (int(x) < a) or (int(x) > b):
+        print('Вы вышли за значения диапазона!')
         break
 
     if int(x) < number:

@@ -1,5 +1,5 @@
 def is_palindrome(a):
-  if a.lower()[::1] == a.lower()[::-1]:
+  if a.lower() == a.lower()[::-1]:
     print('Данное слово является палиндромом')
   else:
     print('Данное слово не является палиндромом')

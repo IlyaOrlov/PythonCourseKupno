@@ -1,8 +1,8 @@
 class Tank:
 
     caption = ""
-    speed = 0
     length = 0
+    speed = 0
     armament = ""
 
     def say_caption(self):

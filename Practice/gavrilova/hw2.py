@@ -1,3 +1,4 @@
+#работа с классами
 class Tank:
 
     caption = ""

@@ -9,13 +9,13 @@ def get_arg(arg):
         if arg.isnumeric():
             x.append(arg)
 
-        else:
-            if arg == "stop":
-#                break
-                pass
-#                 continue
-            else:
-                print("Некорректный ввод")
+        elif arg != "stop":
+            print("Некорректный ввод")
+#        else:
+#            if arg == "stop":
+#                pass
+#            else:
+#                print("Некорректный ввод")
      return x
 
 

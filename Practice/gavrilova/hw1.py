@@ -1,26 +1,24 @@
 def test1(a, b): # вывод на экран большего значения из двух чисел
     if a > b:
         print(a)
+    elif a < b:
+        print(b)
     else:
-        if a < b:
-            print(b)
-        else:
-            return("Числа равны")
+        print("Числа равны")
 
 def test2(a, b): # возврат бол7ьшего значения из двух чисел
      if a > b:
          return(a)
+     elif a < b:
+         return(b)
      else:
-         if a < b:
-             return(b)
-         else:
-             print ("Числа равны")
+         return("Числа равны")
 
 a = int(input("Введите первое число "))
 b = int(input("Введите второе число "))
 
 test1(a,b)
-test2(a,b)
+#test2(a,b)
 
-# x = test2(a,b) #проверка возврвщаемого значения
-# print x
+x = test2(a,b) #проверка возврвщаемого значения
+print(x)

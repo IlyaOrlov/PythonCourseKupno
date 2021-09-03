@@ -12,7 +12,7 @@ def test2(a, b): # возврат бол7ьшего значения из дву
      elif a < b:
          return(b)
      else:
-         return("Числа равны")
+         return(None)
 
 a = int(input("Введите первое число "))
 b = int(input("Введите второе число "))

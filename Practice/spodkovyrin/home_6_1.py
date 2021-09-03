@@ -7,8 +7,8 @@ with open('text.txt', 'r') as f, open('text_tab.txt', 'w') as f_tab:
         print(line_w_tabs)
         f_tab.write(line_w_tabs)
 
-with open('text_tab.txt', 'r') as f, open('text_space.txt', 'w') as f_tab:
+with open('text_tab.txt', 'r') as f, open('text_space.txt', 'w') as f_space:
     for line in f:
         line_w_space = line.replace('\t', '    ')
         print(line_w_space)
-        f_tab.write(line_w_space)
+        f_space.write(line_w_space)

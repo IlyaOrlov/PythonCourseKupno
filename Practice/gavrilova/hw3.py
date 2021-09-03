@@ -4,6 +4,7 @@ def fun(a):
 
 
 def get_arg(arg):
+     x = []
      while not arg.lower() == "stop":
         arg = input('Введите число ')
         if arg.isnumeric():
@@ -22,7 +23,7 @@ def get_arg(arg):
   #  print(arg)
 
 y = ''
-x = []
+#x = []
 x = get_arg('x')
 y = y.join(x)
 print(y)

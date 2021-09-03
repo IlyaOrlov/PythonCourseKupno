@@ -8,11 +8,11 @@ def test1(a, b): # вывод на экран большего значения 
 
 def test2(a, b): # возврат бол7ьшего значения из двух чисел
      if a > b:
-         return(a)
+         return a
      elif a < b:
-         return(b)
+         return b
      else:
-         return(None)
+         return None
 
 a = int(input("Введите первое число "))
 b = int(input("Введите второе число "))

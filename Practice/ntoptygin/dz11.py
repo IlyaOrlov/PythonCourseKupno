@@ -4,6 +4,7 @@
 
 
 text = 'i love cats'
+print(text)
 x = {'i':'я', 'love':'люблю', 'cats':'кошек'}
 
 for k in x.keys():

@@ -1,3 +1,8 @@
-dict = {1: 'cat', 2: 'dog'}
+dict = {'1': 'cat', '2': 'dog'}
 
-print(f'I have {dict[1]} and {dict[2]}')
+x = 'I have 1 and 2'
+
+for i in dict.keys():
+    x = x.replace(i, dict[i])
+
+print(x)

@@ -11,20 +11,26 @@ with open('text.txt', 'w') as f:
 a = None
 
 while not (a == 'space' or a == 'tab' ):
-    a = input('Введите, что Вы хотите сделать. Если заменить табуляцию на пробелы - нажмите tab. \
-Если заменить пробелы на табуляцию - space. ')
-    with open('text.txt', 'r') as f, \
-             open('new_text.txt', 'w') as nf:
-        for line in f:
-            if a == 'space':
-                line = line.replace('    ', '\t')
-            elif a == 'tab':
-                line = line.replace('\t', '    ')
-            else:
-                print('Нужно было ввести space или tab', end='')
-            print(line)
-            nf.write(line)
+    a = input(
+        'Введите, что Вы хотите сделать. Если заменить табуляцию на пробелы - нажмите tab. '
+        'Если заменить пробелы на табуляцию - space. '
+    )
+    if a == 'space':
+        old = '    '
+        new = '\t'
+    elif a == 'tab':
+        old = '\t'
+        new = '    '
+    else:
+        print('Нужно было ввести space или tab')
 
+
+with open('text.txt', 'r') as f, \
+        open('new_text.txt', 'w') as nf:
+    for line in f:
+        line = line.replace(old, new)
+        print(line)
+        nf.write(line)
 
 
 os.remove('text.txt')

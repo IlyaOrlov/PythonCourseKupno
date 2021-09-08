@@ -11,7 +11,7 @@
 arr = [0,3,24,2,3,7]
 def sort(a):
     for i in range(len(a)):
-        x = min(arr[i:len(a)])
+        x = min(arr[i:])
         y = arr.index(x, i)
         arr[i], arr[y] = arr[y], arr[i]
 

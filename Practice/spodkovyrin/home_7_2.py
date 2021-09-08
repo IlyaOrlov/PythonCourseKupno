@@ -11,9 +11,9 @@ class WrapStrToFile:
         with open(self.filepath, 'r') as f:
             try:
                 r = f.read()
+                return f'{r}'
             except Exception:
-                print("File doesn't exist")
-            return f'{r}'
+                return "File doesn't exist"
 
     @content.setter
     def content(self, value):

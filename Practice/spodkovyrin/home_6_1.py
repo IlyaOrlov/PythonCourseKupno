@@ -17,9 +17,9 @@ def tab_space(f, f_tab_space, before, after):
 with open('text.txt', 'w') as f:
     f.write(input('Введите текст '))
 
-x = input('Если хотите поменять пробелы на табуляцию, то введите tab, если же наоборот, то введите space: ')
 
 while True:
+    x = input('Если хотите поменять пробелы на табуляцию, то введите tab, если же наоборот, то введите space: ')
     if x == 'tab':
         with open('text.txt', 'r') as f, \
                 open('text_tab.txt', 'w') as f_tab:

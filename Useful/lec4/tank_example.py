@@ -4,6 +4,9 @@ class Tank:
     x = 0
     name = "Tank"
 
+    def __init__(self, model):
+        self.model = model
+
     def show(self):
         print(f"Tank {self.name} at {self.x}")
 
@@ -29,7 +32,7 @@ class Tiger(Tank):
         print("Ba-ba-bah")
 
 
-tanks = [Tank(), T34(), Tiger()]
+tanks = [Tank('1'), T34('2'), Tiger('3')]
 while True:
     i = int(input("Select tank (0, 1, 2): "))
     if i > 2:

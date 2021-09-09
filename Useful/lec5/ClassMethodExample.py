@@ -9,6 +9,7 @@ class Parent:
     def get_num_of_objects(cls):
         return cls.num
 
+
 class Child(Parent):
     num = 0
 

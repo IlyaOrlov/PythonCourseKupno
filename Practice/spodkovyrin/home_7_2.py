@@ -3,8 +3,8 @@ import os
 
 class WrapStrToFile:
 
-    def __init__(self, filepath):
-        self.filepath = filepath
+    def __init__(self):
+        self.filepath = tempfile.mktemp(suffix='.txt')
 
     @property
     def content(self):
@@ -12,7 +12,7 @@ class WrapStrToFile:
             with open(self.filepath, 'r') as f:
                 r = f.read()
         except Exception:
-            return "File doesn't exist"
+            r = "File doesn't exist"
         return r
 
     @content.setter
@@ -26,8 +26,8 @@ class WrapStrToFile:
         os.unlink(self.filepath)
 
 
-path = tempfile.mktemp(suffix='.txt', dir='E:\Study\PythonCourseKupno\Practice\spodkovyrin')
-wstf = WrapStrToFile(path)
+wstf = WrapStrToFile()
+print(wstf.filepath)
 print(wstf.content)
 wstf.content = 'test str'
 print(wstf.content)

@@ -4,7 +4,7 @@ import os
 class WrapStrToFile:
 
     def __init__(self):
-        self.filepath = tempfile.mktemp(suffix='.txt')
+        self.filepath = tempfile.mktemp(suffix='.txt', dir='.')
 
     @property
     def content(self):

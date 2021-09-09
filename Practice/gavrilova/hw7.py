@@ -1,3 +1,3 @@
-x = list(input("Введите пятизначное число"))
-for i in range(5):
+x = list(input("Введите число "))
+for i in range(len(x)):
     print(f'{i+1} цифра равна {x[i]}')

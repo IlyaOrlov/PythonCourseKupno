@@ -8,12 +8,12 @@ class WrapStrToFile:
 
     @property
     def content(self):
-        with open(self.filepath, 'r') as f:
-            try:
+        try:
+            with open(self.filepath, 'r') as f:
                 r = f.read()
-                return f'{r}'
-            except Exception:
-                return "File doesn't exist"
+        except Exception:
+            return "File doesn't exist"
+        return r
 
     @content.setter
     def content(self, value):
@@ -22,10 +22,11 @@ class WrapStrToFile:
 
     @content.deleter
     def content(self):
-        self.filepath = 'Deleted'
+        print('File Deleted')
+        os.unlink(self.filepath)
 
 
-fd, path = tempfile.mkstemp(suffix='.txt', dir='E:\Study\PythonCourseKupno\Practice\spodkovyrin', text=True)
+path = tempfile.mktemp(suffix='.txt', dir='E:\Study\PythonCourseKupno\Practice\spodkovyrin')
 wstf = WrapStrToFile(path)
 print(wstf.content)
 wstf.content = 'test str'
@@ -33,5 +34,3 @@ print(wstf.content)
 wstf.content = 'text 2'
 print(wstf.content)
 del wstf.content
-os.close(fd)
-os.unlink(path)

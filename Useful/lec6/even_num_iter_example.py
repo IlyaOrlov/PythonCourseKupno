@@ -1,24 +1,29 @@
-class Fib:
+class MyIter:
     def __init__(self, limit):
+        self.n = 0
         self.i = 0
         self.limit = limit
-        self.cur = 0
-        self.nxt = 1
 
     def __iter__(self):
         return self
 
     def __next__(self):
         if self.i < self.limit:
-            tmp = self.cur
-            new = self.cur + self.nxt
-            self.cur = self.nxt
-            self.nxt = new
+            a = self.n
+            self.n += 2
             self.i += 1
-            return tmp
+            return a
         else:
             raise StopIteration
 
 
-for i in Fib(5):
-    print(i)
+for each in MyIter(13):
+    print(each)
+# i = iter(x)
+# print(next(i))
+# print(next(i))
+# print(next(i))
+# print(next(i))
+# print(next(i))
+
+

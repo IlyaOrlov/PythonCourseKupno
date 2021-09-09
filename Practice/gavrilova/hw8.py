@@ -1,10 +1,14 @@
 def sort(a):
     for i in range(len(a)):
-        for j in range(len(a)-1-i):
-            if a[j] < a[j+1]:
-                a[i], a[j+1] = a[j+1], a[i]
+        n = i
+#        print("i=",i)
+        for j in range(i + 1,len(a)):
+#            print("j=",j)
+            if a[j] < a[n]:
+                n = j
+                a[i], a[n] = a[n], a[i]
 
-аrr = list(input("Введите последовательность чисел"))
+аrr = list(input("Введите последовательность чисел "))
 
 print(аrr)
 sort(аrr)

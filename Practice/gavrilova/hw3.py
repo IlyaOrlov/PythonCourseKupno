@@ -22,6 +22,7 @@ def get_arg(arg):
 
   #  print(arg)
 
+arg = 0
 y = ''
 #x = []
 x = get_arg('x')

@@ -8,5 +8,7 @@ class Man:
     def solve_task(self):
         print(f"I'm {self.name} and i'm not ready yet")
 
-a = Man('Ivan')
-a.solve_task()
+# чтобы этот код не выполнялся в dz14 - прописываем вот это:
+if __name__ == "__main__":
+    a = Man('Ivan')
+    a.solve_task()

@@ -7,9 +7,9 @@
 import copy
 
 def multiplier(m=1, source=[1,2,3]):
-    result = copy.copy(source)
-    for i, x in enumerate(result):
-        result[i] = result[i] * m
+    result = []
+    for i, x in enumerate(source):
+        result.append(source[i] * m)
     return result
 
 lst = [1,2,4]

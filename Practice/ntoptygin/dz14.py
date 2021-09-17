@@ -5,15 +5,25 @@
 import time
 import random
 
-class Pupil:
+class Man:
 
     def __init__(self, name):
         self.name = name
     def solve_task(self):
-        time.sleep(random.randint(3, 6))
-        print(f"I'm {self.name} and i'm not ready yet")
+        print(f"I'm {self.name} and i'm not ready yet.")
 
-a = Pupil('Petr')
+
+class Pupil(Man):
+
+    def solve_task(self):
+        time.sleep(random.randint(3, 6))
+        super().solve_task()
+
+a = Man('Andrey')
 a.solve_task()
+
+p = Pupil('Petr')
+p.solve_task()
+
 
 

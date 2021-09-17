@@ -6,14 +6,14 @@
 
 import copy
 
-
 def multiplier(m=1, source=[1,2,3]):
     result = copy.copy(source)
-    for i, x in enumerate(source):
-        result[i] *= m
+    for i, x in enumerate(result):
+        result[i] = result[i] * m
     return result
 
 lst = [1,2,4]
+
 a = multiplier(5,lst)
 print(a)
 a = multiplier(5,lst)

@@ -7,10 +7,10 @@
 # words = [c+c for c in chargen()][:10]
 
 def chargen():
-        for c in '0123456789':
-            yield c
-for c in chargen():
-    words = [c+c for c in chargen()][:10]
+    for c in '0123456789':
+        yield c
+words = [c+c for c in chargen()][:10]
 print(words)
 
-# проблема была в том, что значение C из функции chargen не передавалось в массив Words
+
+# проблема была в том, что данный цикл являлся бесконечным

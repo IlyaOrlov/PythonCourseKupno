@@ -1,11 +1,11 @@
-from datetime import date
-import numpy as np
+from datetime import date, timedelta
 
-def work_days(d1, d2, h):
-    days = np.busday_count(d1, d2, holidays=h)
-    print(days + 1)
 
-d1 = date(2021, 11, 1)
-d2 = date(2021, 11, 24)
-h = ['2021-11-04', '2021-11-05']
-work_days(d1, d2, h)
+def work_days(d1, d2):
+    days = (d1 + timedelta(x + 1) for x in range((d2 - d1).days))
+    print(sum(1 for day in days if day.weekday() < 5) + 1)
+
+
+d1 = date(2021, 9, 17)
+d2 = date(2021, 9, 26)
+work_days(d1, d2)

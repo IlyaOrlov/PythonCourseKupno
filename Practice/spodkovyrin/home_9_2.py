@@ -2,11 +2,13 @@ from subprocess import run, PIPE
 import tempfile
 import os
 
+
 def fun(path):
-    proc = run(['notepad.exe', path], stdout=PIPE, stderr=PIPE)
+    proc = run(['type', path], shell=True, stdout=PIPE, stderr=PIPE, encoding='utf-8')
     if proc.returncode:
         print(proc.stderr)
     print('result: ', proc.stdout)
+
 
 path = tempfile.mktemp(suffix='.txt', dir='.')
 print(path)

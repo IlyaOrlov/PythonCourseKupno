@@ -14,14 +14,14 @@ class Human:
         self.height = height
 
     def __repr__(self):
-        return f'Human №{self.i}: Sex: "{self.sex}", Name: "{self.name} {self.surname}", Age: "{self.age}", ' \
+        return f'Human № {self.i + 1}: Sex: "{self.sex}", Name: "{self.name} {self.surname}", Age: "{self.age}", ' \
                f'Height: "{self.height}"'
 
 
 def generate_human(n):
     for i in range(n):
-        dict = ['male', 'female']
-        sex = random.choice(dict)
+        lst = ['male', 'female']
+        sex = random.choice(lst)
         if sex == 'male':
             name = names.get_first_name(gender=sex)
             surname = names.get_last_name()
@@ -30,9 +30,13 @@ def generate_human(n):
             surname = names.get_last_name()
         age = random.randint(18, 65)
         height = random.randint(155, 196)
-        human_i = Human(i, sex, name, surname, age, height)
-        with open('human.data', 'ab') as f:
-            pickle.dump(human_i, f)
+        human = Human(i, sex, name, surname, age, height)
+        return human
+
+
+def ser():
+    with open('human.data', 'ab') as f:
+        pickle.dump(generate_human(10), f)
 
 
 def deser():
@@ -40,5 +44,5 @@ def deser():
         print(pickle.load(f))
 
 
-generate_human(10)
+ser()
 deser()

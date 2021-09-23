@@ -37,7 +37,6 @@ def generate_human(n):
 
 def ser():
     with open('human.data', 'ab') as f:
-        generate_human(10)
         pickle.dump(Human.human, f)
 
 
@@ -46,5 +45,6 @@ def deser():
         print(pickle.load(f))
 
 
+generate_human(10)
 ser()
 deser()

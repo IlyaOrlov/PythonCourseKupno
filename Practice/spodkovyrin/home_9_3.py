@@ -4,7 +4,7 @@ import random
 
 
 class Human:
-    human = []
+    # human = []
 
     def __init__(self, i, sex, name, surname, age, height):
         self.i = i
@@ -13,7 +13,7 @@ class Human:
         self.surname = surname
         self.age = age
         self.height = height
-        Human.human.append(self)
+        # Human.human.append(self)
 
     def __repr__(self):
         return f'Human № {self.i + 1}: Sex: "{self.sex}", Name: "{self.name} {self.surname}", Age: "{self.age}", ' \
@@ -21,6 +21,7 @@ class Human:
 
 
 def generate_human(n):
+    humans = []
     for i in range(n):
         lst = ['male', 'female']
         sex = random.choice(lst)
@@ -33,11 +34,13 @@ def generate_human(n):
         age = random.randint(18, 65)
         height = random.randint(155, 196)
         human = Human(i, sex, name, surname, age, height)
+        humans.append(human)
+    return humans
 
 
 def ser():
     with open('human.data', 'ab') as f:
-        pickle.dump(Human.human, f)
+        pickle.dump(generate_human(10), f)
 
 
 def deser():
@@ -45,6 +48,6 @@ def deser():
         print(pickle.load(f))
 
 
-generate_human(10)
+# generate_human(10)
 ser()
 deser()

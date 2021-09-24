@@ -4,4 +4,4 @@ def count_symbol(a):
 
 s = 'Hi, Elvis, I am here!'
 s1 = count_symbol(s)
-print ('Символ i встречается в строке: ' + s + ' '+str(s1)+' раза')
+print ('Символ i встречается в строке: ' + s + ' '+str(s1)+' раз')

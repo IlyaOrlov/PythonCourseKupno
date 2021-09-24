@@ -47,15 +47,6 @@ while True:
                 folder_path = os.path.join(root_folder, folder)
                 if seconds_folders >= get_age(folder_path):
                     remove_folder(folder_path)
-                else:
-                    for folder in folders:
-                        folder_path = os.path.join(root_folder, folder)
-                        if seconds_folders >= get_age(folder_path):
-                            remove_folder(folder_path)
-                    for file in files:
-                        file_path = os.path.join(root_folder, file)
-                        if seconds_files >= get_age(file_path):
-                            remove_file(file_path)
             for file in files:
                 file_path = os.path.join(root_folder, file)
                 if seconds_files >= get_age(file_path):

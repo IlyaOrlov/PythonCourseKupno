@@ -25,12 +25,8 @@ def generate_human(n):
     for i in range(n):
         lst = ['male', 'female']
         sex = random.choice(lst)
-        if sex == 'male':
-            name = names.get_first_name(gender=sex)
-            surname = names.get_last_name()
-        else:
-            name = names.get_first_name(gender=sex)
-            surname = names.get_last_name()
+        name = names.get_first_name(gender=sex)
+        surname = names.get_last_name()
         age = random.randint(18, 65)
         height = random.randint(155, 196)
         human = Human(i, sex, name, surname, age, height)

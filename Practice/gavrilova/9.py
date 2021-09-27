@@ -6,13 +6,13 @@ class User:
     def setName(self):
         pass
 
-    def getName(self, name):
+    def getName(self):
         pass
 
     def setAge(self):
         pass
 
-    def getAge(self, name):
+    def getAge(self):
         pass
 
 class Worker(User):
@@ -23,7 +23,7 @@ class Worker(User):
     def setSalary(self):
         pass
 
-    def getSalary(self, name):
+    def getSalary(self):
         pass
 
 w1 = Worker("John", 25, 1000)

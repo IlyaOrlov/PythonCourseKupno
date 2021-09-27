@@ -8,5 +8,5 @@ def count_symbol(a, s):
 test_str = 'Hi, Elvis, I am here!'
 simv = 'i'
 n = count_symbol(test_str, simv)
-print(f'Символ {simv} встречается в строке: {test_str} {str(n)} раза')
+print(f'Символ {simv} встречается в строке {test_str} {str(n)} раза')
 #print ('Символ ' + simv + ' встречается в строке: ' + test_str + ' '+str(n)+' раз')

@@ -1,7 +1,10 @@
-def fun(a):
-   a = len(a)
-   return a
+def length(lst):
+   if not lst:
+      return 0
+   return 1 + length(lst[1:])
 
-list = [123, 'abc', 'apple']
-x = fun(list)
-print (x)
+
+a = [1, 2, 3]
+l = length(a)
+print("Длина списка равна: " + str(l))
+

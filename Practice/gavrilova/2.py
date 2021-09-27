@@ -1,7 +1,6 @@
-def reversed(a):
-    a = list[::-1]
-    return a
+def myreversed(a):
+    return list[::-1]
 
 list = [123, 'abc', 'apple']
-x = reversed(list)
+x = myreversed(list)
 print (x)

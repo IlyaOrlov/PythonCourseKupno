@@ -1,7 +1,10 @@
 def count_symbol(a):
-    counter = a.count('i')
-    return counter
+    count = 0
+    for i in test_str:
+        if i == 'i':
+            count = count + 1
+    return count
 
-s = 'Hi, Elvis, I am here!'
-s1 = count_symbol(s)
-print ('Символ i встречается в строке: ' + s + ' '+str(s1)+' раз')
+test_str = 'Hi, Elvis, I am here!'
+n = count_symbol(test_str)
+print ('Символ i встречается в строке: ' + test_str + ' '+str(n)+' раз')

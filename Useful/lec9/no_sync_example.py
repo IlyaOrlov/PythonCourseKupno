@@ -6,10 +6,11 @@ lst = []
 
 def print_len():
     global lst
-    # while True:
-    if 'stop' in lst:
-        lst.remove('stop')
-        print(f'length of {lst} is {len(lst)}')
+    while True:
+        if 'stop' in lst:
+            lst.remove('stop')
+            print(f'length of {lst} is {len(lst)}')
+            break
 
 
 if __name__ == '__main__':

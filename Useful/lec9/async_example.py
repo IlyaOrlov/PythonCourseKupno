@@ -26,7 +26,7 @@ async def status_fun():
 
 if __name__ == '__main__':
     ev_loop = asyncio.get_event_loop()
-    tasks = [ev_loop.create_task(calc_fun(1000)),
+    tasks = [ev_loop.create_task(calc_fun(100)),
              ev_loop.create_task(status_fun())]
     futures = asyncio.wait(tasks)
     ev_loop.run_until_complete(futures)

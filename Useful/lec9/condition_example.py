@@ -7,9 +7,9 @@ lst = []
 def print_len(my_cv):
     global lst
     with my_cv:
-        # my_cv.wait_for(lambda: 'stop' in lst)
-        while 'stop' not in lst:
-            my_cv.wait()
+        my_cv.wait_for(lambda: 'stop' in lst)
+        # while 'stop' not in lst:
+        #     my_cv.wait()
     lst.remove('stop')
     print(f'length of {lst} is {len(lst)}')
 

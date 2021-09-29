@@ -13,7 +13,7 @@ def worker():  # функция выполняемая в дочернем по�
         item = '0'
         while item.isdigit():
             item = q.get()  # ожидаем появление элемента в очереди
-            fout.write('start\n')
+            fout.write('start ')
             if item.isdigit():
                 fout.write(f'{int(item) ** 2}, ')
             fout.write('finish\n')

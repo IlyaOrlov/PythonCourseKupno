@@ -5,12 +5,11 @@ import random
 
 class TestManager:
     def __enter__(self):
-        global start_time
-        start_time = time.time()
+        self.start_time = time.time()
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         end_time = time.time()
-        print("Общее время исполнения кода составляет:", end_time - start_time, 'секунд')
+        print("Общее время исполнения кода составляет:", end_time - self.start_time, 'секунд')
 
 with TestManager():
     time.sleep(random.randint(1, 3))

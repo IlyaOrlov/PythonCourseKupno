@@ -6,10 +6,9 @@
 
 import copy
 
+
 def multiplier(m=1, source=[1,2,3]):
-    result = []
-    for i, x in enumerate(source):
-        result.append(source[i] * m)
+    result = [m*c for c in source]
     return result
 
 lst = [1,2,4]
@@ -18,5 +17,3 @@ a = multiplier(5,lst)
 print(a)
 a = multiplier(5,lst)
 print(a)
-
-# проблема была в том, что функция multiplier изменяла наш исходный список

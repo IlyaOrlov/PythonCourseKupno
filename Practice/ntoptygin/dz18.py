@@ -1,10 +1,17 @@
 # Напишите свой менеджер контекста, замеряющий и показывающий время исполнения кода внутри него
 import time
-
-with open('text.txt', 'w') as f:
-    start_time = time.time()
-    f.write(input('Введите текст '))
-    end_time = time.time()
+import random
 
 
-print(end_time - start_time)
+class TestManager:
+    def __enter__(self):
+        global start_time
+        start_time = time.time()
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        end_time = time.time()
+        print("Общее время исполнения кода составляет:", end_time - start_time, 'секунд')
+
+with TestManager():
+    time.sleep(random.randint(1, 3))
+    print('Hello')

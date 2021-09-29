@@ -14,7 +14,7 @@ import itertools
 
 def chain(lst1, lst2, lst3):
     a = itertools.chain(lst1, lst2, lst3)
-    return(list(a))
+    return list(a)
 
 my_lst1 = [1,2,3]
 my_lst2 = [4,5]
@@ -29,7 +29,7 @@ print(a)
 
 def false(lst):
     a = itertools.filterfalse(lambda x: len(x) < 5, lst)
-    return(list(a))
+    return list(a)
 
 my_lst = ['hello', 'i', 'write', 'cool', 'code']
 
@@ -41,9 +41,9 @@ print(a)
 # Функция выдает на строку 'password' все возможные комбинации вида
 # ([('p', 'a', 's', 's'), ('p', 'a', 's', 'w'), ('p', 'a', 's', 'o'), ...)
 
-def combinations(str):
-    a = itertools.combinations(str, 4)
-    return(list(a))
+def combinations(stroka):
+    a = itertools.combinations(stroka, 4)
+    return list(a)
 
 my_str = 'password'
 

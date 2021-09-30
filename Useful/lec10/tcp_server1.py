@@ -15,4 +15,4 @@ while True:
     # Преобразуем строку в набор байтов (ascii в utf-8) и отправляем
     conn.send('Thank you for the connection'.encode())
     conn.close()
-# s.close()
+s.close()

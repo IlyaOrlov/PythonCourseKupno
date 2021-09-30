@@ -1,5 +1,6 @@
 import socket
 import random
+import time
 
 
 class TcpClient:
@@ -12,10 +13,12 @@ class TcpClient:
     def run(self):
         self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self._socket.connect((self.host, self.port))
+        time.sleep(3)
         self._socket.send(self.name.encode())
         data = self._socket.recv(1024)
-        print('Received: {}'.format(data.decode()))
+        print(f'Received: {data.decode()}')
         self._socket.close()
+
 
 if __name__ == '__main__':
     name = 'Python client ' + str(random.randint(1, 1000))

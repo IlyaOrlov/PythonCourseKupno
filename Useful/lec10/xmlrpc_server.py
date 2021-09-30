@@ -6,7 +6,7 @@ def is_even(n):
 
 
 if __name__ == '__main__':
-    server = SimpleXMLRPCServer(("localhost", 8000))
+    server = SimpleXMLRPCServer(("127.0.0.1", 8000))
     print("Listening on port 8000...")
     server.register_function(is_even, "is_even")
     server.serve_forever()

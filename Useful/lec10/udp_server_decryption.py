@@ -19,6 +19,8 @@ port = 12345
 s.bind((host, port))
 while True:
     data, addr = s.recvfrom(1024) # размер буфера для данных – 1024 байта
-    print('Server got data from client: {}'.format(decrypt(data.decode())))
+    res = data.decode()
+    print(f"{res}")
+    print(f'Server got data from client: {decrypt(res)}')
     s.sendto('Thank you for the data'.encode(), addr)
 # s.close()

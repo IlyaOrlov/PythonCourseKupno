@@ -33,27 +33,28 @@ for row in cur.fetchall():
 login = input('Input login: ')
 password = input('Input password: ')
 
-req = "SELECT login, salary from USERS WHERE login='{}' AND password='{}'".format(login, password)
-print('This is request: {}'.format(req))
-cur.execute(req)
-print('Output data:')
-rows = cur.fetchall()
-if not len(rows):
-    print('incorrect login/password')
+# req = "SELECT login, salary from USERS WHERE login='{}' AND password='{}'".format(login, password)
+# print('This is request: {}'.format(req))
+# cur.execute(req)
+# print('Output data:')
+# rows = cur.fetchall()
+# if not len(rows):
+#     print('incorrect login/password')
+# else:
+#     for row in rows:
+#         print(row)
+
+cursor = conn.execute("SELECT login, salary from USERS WHERE login=? AND password=?",
+                      (login, password))
+print('Output data 2:')
+if cursor.rowcount == -1:
+   print('incorrect login/password')
 else:
-    for row in rows:
-        print(row)
+    for row in cursor:
+       print(row)
 
-#cursor = conn.execute("SELECT login, salary from USERS WHERE login=? AND password=?", (login, password))
-#print('Output data 2:')
-#if cursor.rowcount == -1:
-#    print('incorrect login/password')
-#else:
-#for row in cursor:
-#    print(row)
-
-#conn.execute('DROP TABLE USERS')
-#print('Таблица удалена')
+conn.execute('DROP TABLE USERS')
+print('Таблица удалена')
 
 conn.close()
 

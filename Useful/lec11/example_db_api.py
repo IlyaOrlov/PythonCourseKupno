@@ -32,6 +32,7 @@ def configure_db(conn):
                 "     ProjectId   INTEGER,"
                 "     PRIMARY KEY (EmployeeId, ProjectId))")
 
+
 # Добавление записей в таблицу Проект
 def insert_project(conn, name):
     # Создаем курсор - специальный объект,
@@ -44,6 +45,7 @@ def insert_project(conn, name):
     # Если мы не просто читаем, но и вносим изменения в базу данных
     # - необходимо сохранить транзакцию
     conn.commit()
+
 
 # Добавление записей в таблицу ДолжностьОклад
 def insert_position(conn, position, salary):
@@ -91,6 +93,7 @@ def authentication2(conn, login, pwd):
                 " AND E.Login = ? AND E.Password = ?",
                 (login, pwd))
     return cur.fetchone()
+
 
 def bad_authentication(conn, login, pwd):
     cur = conn.cursor()
@@ -150,6 +153,7 @@ def update_employee_bonus(conn, employee_id, new_bonus):
                 {'employee_id': employee_id, 'new_bonus': new_bonus})
     conn.commit()
 
+
 # Удаление сотрудника из проекта (но не из базы данных)
 def delete_employee_from_project(conn, employee_id, project_id):
     cur = conn.cursor()
@@ -200,7 +204,7 @@ if __name__ == "__main__":
 
     login = input("Логин: ")
     pwd = input("Пароль: ")
-    res = bad_authentication(conn, login, pwd)
+    res = authentication(conn, login, pwd)
     if res:
         user = dict(res)
         print("Здравствуйте, {}".format(user['Name']))

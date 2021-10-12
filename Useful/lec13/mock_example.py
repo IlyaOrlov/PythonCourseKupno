@@ -1,31 +1,23 @@
-def fun(service):
-    service.run()
-    print('rrr')
-    service.say()
+def fun(a, b):
+    print((a + b) * 100)
 
 
+def mock_print(arg):
+    mock_print.arg = arg
 
-class MockService:
-    name = 'Mock name'
-    flag1 = False
-    flag2 = False
+class CtxMgr:
+    def __enter__(self):
+        global print
+        self.bkp_print = print
+        print = mock_print
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        global print
+        print = self.bkp_print
 
-    def run(self):
-        self.flag1 = True
+with CtxMgr():
+    fun(1, 2)
 
-    def say(self):
-        self.flag2 = True
-
-s = MockService()
-
-flag3 = False
-def print(arg):
-    global flag3
-    flag3 = True
-    assert(arg == s.name)
+assert(mock_print.arg == 300)
+print(mock_print.arg)
 
 
-fun(s)
-assert(s.flag1)
-assert(s.flag2)
-assert(flag3)

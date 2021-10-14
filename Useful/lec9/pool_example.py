@@ -13,4 +13,5 @@ def cube(x):
 if __name__ == '__main__':
     pool = Pool(processes=5)
     res = pool.map(cube, range(1,7))
+    # res = pool.starmap, если в функцию нужно передать несколько аргументов
     print(res)
